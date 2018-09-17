@@ -1,0 +1,16 @@
+<!-- -*- mode:xml; tab-width:2; c-basic-offset:2; intent-tabs-mode:nil; -*- ex: set tabstop=2 expandtab: -->
+<properties>
+  <!-- User preferences -->
+  <property id="userCalibrationQNH" type="float">101325.0</property>
+  <property id="userReferenceElevation" type="float">0.0</property>
+  <property id="userReferenceTemperatureISAOffset" type="float">0.0</property>
+  <property id="userReferenceTemperatureAuto" type="boolean">false</property>
+  <property id="userGeneralTimeConstant" type="number">3</property>
+  <property id="userGeneralBackgroundColor" type="number">0</property>
+  <property id="userUnitElevation" type="number">-1</property>
+  <property id="userUnitPressure" type="number">-1</property>
+  <property id="userUnitTemperature" type="number">-1</property>
+  <property id="userUnitTimeUTC" type="boolean">false</property>
+  <property id="userCorrectionAbsolute" type="float">0.0</property>
+  <property id="userCorrectionRelative" type="float">1.0</property>
+</properties>

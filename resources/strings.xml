@@ -1,0 +1,59 @@
+<!-- -*- mode:xml; tab-width:2; c-basic-offset:2; intent-tabs-mode:nil; -*- ex: set tabstop=2 expandtab: -->
+<strings>
+  <string id="AppName">Pilot Altimeter</string>
+  <string id="AppVersion">1.0.20180915a</string>
+  <!-- Properties -->
+  <string id="titleVersion">Version</string>
+  <string id="titleLicense">License</string>
+  <string id="titleAuthor">Author</string>
+  <!-- Menu (settings) -->
+  <string id="titleSettings">Settings</string>
+  <string id="valueAuto">auto</string>
+  <string id="valueSet">set</string>
+  <!-- Menu (calibration) -->
+  <string id="titleSettingsCalibration">Calibrate</string>
+  <string id="titleCalibrationQNH">QNH</string>
+  <string id="titleCalibrationElevation">Elevation</string>
+  <!-- Menu (reference) -->
+  <string id="titleSettingsReference">Reference</string>
+  <string id="titleReferenceElevation">Elevation</string>
+  <string id="titleReferenceTemperature">Temperature</string>
+  <string id="titleReferenceTemperatureAuto">Temperature Source</string>
+  <!-- Menu (general) -->
+  <string id="titleSettingsGeneral">General</string>
+  <string id="titleGeneralTimeConstant">Time Constant</string>
+  <string id="titleGeneralBackgroundColor">Background Color</string>
+  <string id="valueColorWhite">White</string>
+  <string id="valueColorBlack">Black</string>
+  <!-- Menu (units) -->
+  <string id="titleSettingsUnits">Units</string>
+  <string id="titleUnitElevation">Elevation</string>
+  <string id="valueUnitElevationMetric">m</string>
+  <string id="valueUnitElevationStatute">ft</string>
+  <string id="titleUnitPressure">Pressure</string>
+  <string id="valueUnitPressureMetric">mb</string>
+  <string id="valueUnitPressureStatute">inHg</string>
+  <string id="titleUnitTemperature">Temperature</string>
+  <string id="valueUnitTemperatureMetric">°C</string>
+  <string id="valueUnitTemperatureStatute">°F</string>
+  <string id="titleUnitTimeUTC">Timezone</string>
+  <string id="valueUnitTimeLT">LT</string>
+  <string id="valueUnitTimeUTC">UTC</string>
+  <!-- Menu (correction) -->
+  <string id="titleSettingsCorrection">Correction</string>
+  <string id="titleCorrectionRelative">Relative</string>
+  <string id="titleCorrectionAbsolute">Absolute</string>
+  <!-- Menu (about) -->
+  <string id="titleSettingsAbout">About</string>
+  <!-- Layouts -->
+  <string id="labelPressureQNH">QNH</string>
+  <string id="labelPressureQFE">QFE</string>
+  <string id="labelPressureQFERaw">(raw sensor value)</string>
+  <string id="labelAltitudeActual">Altitude</string>
+  <string id="labelAltitudeISA">Standard Altitude</string>
+  <string id="labelAltitudeFL">Flight Level</string>
+  <string id="labelAltitudeDensity">Density Altitude</string>
+  <string id="labelHeight">Height</string>
+  <string id="labelElevation">Elevation</string>
+  <string id="labelTemperature">Temperature</string>
+</strings>

@@ -1,0 +1,25 @@
+Pilot Altimeter (Garmin ConnectIQ) Widget
+=====================================
+Copyright (C) 2018 Cedric Dufour <http://cedric.dufour.name>
+
+Pilot ICAO/ISA Altimeter (Pilot Altimeter) is free software:
+you can redistribute it and/or modify it under the terms of the GNU General
+Public License as published by the Free Software Foundation, Version 3.
+
+Pilot ICAO/ISA Altimeter (Pilot Altimeter) is distributed in the hope that it
+will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+See the GNU General Public License for more details.
+
+Pilot ICAO/ISA Altimeter (Pilot Altimeter) includes all resources which contain the
+following mention in their preamble: "Pilot ICAO/ISA Altimeter (Pilot Altimeter)"
+
+SPDX-License-Identifier: GPL-3.0
+License-Filename: LICENSE/GPL-3.0.txt
+
+
+3rd-party Material
+==================
+Other resources are (and must be) used according to their original license,
+which is (should be made) available from their respective author.

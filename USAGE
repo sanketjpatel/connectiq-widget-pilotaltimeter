@@ -1,0 +1,106 @@
+Pilot Altimeter (Garmin ConnectIQ) Widget
+=========================================
+Usage instructions
+
+
+Global View
+-----------
+
+Pilot Altimeter displays altitude data in multiple view, which you can switch
+thanks to the SELECT button:
+ - AMSL (Above Mean Sea Level) Altitude, based on user-specified QNH:
+   [top] Actual altitude
+   [bottom] QNH
+ - Flight Level/Altitude, based on standard QNE (1013.25hPa)
+   [top] Flight level (FL...)
+   [bottom] Standard altitude
+ - AGL (Above Ground Level) Height, based on user-specified reference elevation
+   [top] Height
+   [bottom] Reference elevation
+ - Density Altitude, taking into account QFE and temperature
+   [top] Density altitude
+   [bottom] temperature and ISA offset
+ - Pressure readings
+   [top] Calibrated and low-pass filtered QFE
+   [bottom] Raw sensor QFE
+
+
+Settings
+--------
+
+Enter the Settings menu by pressing the MENU button (long-pressing the UP button).
+
+You may then specify the following settings:
+ - Calibration -> Elevation:
+   calibrate the altimeter using the current known elevation
+   (QNH shall be adjusted accordingly)
+ - Calibration -> QNH:
+   calibrate the altimeter using the current known QNH
+ - Reference -> Elevation
+   set the reference elevation for AGL (Above Ground Level) height calculation
+ - Reference -> Temperature
+   set the current external temperature for Density Altitude calculation
+   (the offset to the standard ISA temperature shall be saved internally)
+ - General -> Time Constant:
+   time constants (in seconds) used for exponentially averaging (EMA) the
+   device's sensor input
+ - General -> Background Color:
+   the background color
+ - Units -> Elevation Unit:
+   preferred units for displaying elevation/altitude values
+ - Units -> Pressure Unit:
+   preferred units for displaying pressure values
+ - Units -> Temperature Unit:
+   preferred units for displaying temperature values
+ - Units -> Timezone:
+   display Local Time (LT) or Universal Time Coordinates (UTC/Z)
+ - Correction -> Absolute:
+   set the absolute device's sensor error correction
+ - Correction -> Relative:
+   set the relative device's sensor error correction
+
+
+Measurement and Calculation Methods
+-----------------------------------
+
+Pilot Altimeter relies on ConnectIQ's Activity.Info:rawAmbientPressure reading,
+namely (hopefully) the raw barometric pressure (QFE) as measured by the device's
+sensor.
+
+QNH and altitude (ALT) calculation is then performed using the official ICAO
+formulas, as documented in ICAO Doc 9837 "Manual on Automatic Meteorological
+Observing Systems at Aerodromes":
+
+  https://store.icao.int/manual-on-automatic-meteorological-observing-systems-at-aerodromes-2011-doc-9837-english-printed.html
+
+Namely:
+
+  1.   ALTisa = 44330.77 − 11880.32 * QFE^0.190263
+
+  2.a  QNH  = 1013.25 * (1 - 0.0065 * (ALTisa - ALT) / 288.15)^5.25588
+
+  2.b  ALT  = ALTisa - 288.15 * (1 - (QNH / 1013.25)^0.190263) / 0.0065
+
+
+Calibrating the Device Sensor
+-----------------------------
+
+Pilot Altimeter allows you to calibrate/correct your device's sensor using
+the following formulas:
+
+   QFEcalibrated = QFEsensor * Crel + Cabs
+
+If you suspect your device's sensor is inaccurate, you shall:
+
+1. take down multiple QFE readings, at different altitude, using your device's
+   *raw* QFE and a reliable, calibrated, reference barometer
+
+2. import those readings in a LibreOffice Calc (or Microsoft Excel) spreadsheet
+   and obtain the Crel and Cabs constants by performing a linear regression:
+
+     https://help.libreoffice.org/Calc/Regression_Analysis
+     (Crel = Slope and Cabs = Intercept)
+
+3. set Correction -> Relative/Absolute values to the discovered Crel and Cabs
+
+Not an easy feat. But if you must...
