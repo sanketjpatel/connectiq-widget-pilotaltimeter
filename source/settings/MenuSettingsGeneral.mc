@@ -34,7 +34,7 @@ class MenuSettingsGeneral extends Ui.Menu {
 
 }
 
-class MenuDelegateSettingsGeneral extends Ui.MenuInputDelegate {
+class MenuSettingsGeneralDelegate extends Ui.MenuInputDelegate {
 
   //
   // FUNCTIONS: Ui.MenuInputDelegate (override/implement)
@@ -46,12 +46,12 @@ class MenuDelegateSettingsGeneral extends Ui.MenuInputDelegate {
 
   function onMenuItem(item) {
     if (item == :menuGeneralTimeConstant) {
-      //Sys.println("DEBUG: MenuDelegateSettingsGeneral.onMenuItem(:menuGeneralTimeConstant)");
-      Ui.pushView(new PickerGeneralTimeConstant(), new PickerDelegateGeneralTimeConstant(), Ui.SLIDE_IMMEDIATE);
+      //Sys.println("DEBUG: MenuSettingsGeneralDelegate.onMenuItem(:menuGeneralTimeConstant)");
+      Ui.pushView(new PickerGeneralTimeConstant(), new PickerGeneralTimeConstantDelegate(), Ui.SLIDE_IMMEDIATE);
     }
     else if (item == :menuGeneralBackgroundColor) {
-      //Sys.println("DEBUG: MenuDelegateSettingsGeneral.onMenuItem(:menuGeneralBackgroundColor)");
-      Ui.pushView(new PickerGeneralBackgroundColor(), new PickerDelegateGeneralBackgroundColor(), Ui.SLIDE_IMMEDIATE);
+      //Sys.println("DEBUG: MenuSettingsGeneralDelegate.onMenuItem(:menuGeneralBackgroundColor)");
+      Ui.pushView(new PickerGeneralBackgroundColor(), new PickerGeneralBackgroundColorDelegate(), Ui.SLIDE_IMMEDIATE);
     }
   }
 

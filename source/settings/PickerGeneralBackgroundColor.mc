@@ -41,7 +41,7 @@ class PickerGeneralBackgroundColor extends Ui.Picker {
 
 }
 
-class PickerDelegateGeneralBackgroundColor extends Ui.PickerDelegate {
+class PickerGeneralBackgroundColorDelegate extends Ui.PickerDelegate {
 
   //
   // FUNCTIONS: Ui.PickerDelegate (override/implement)

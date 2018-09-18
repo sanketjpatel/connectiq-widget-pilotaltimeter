@@ -41,7 +41,7 @@ class PickerReferenceTemperatureAuto extends Ui.Picker {
 
 }
 
-class PickerDelegateReferenceTemperatureAuto extends Ui.PickerDelegate {
+class PickerReferenceTemperatureAutoDelegate extends Ui.PickerDelegate {
 
   //
   // FUNCTIONS: Ui.PickerDelegate (override/implement)

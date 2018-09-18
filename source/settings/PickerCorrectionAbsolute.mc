@@ -32,7 +32,7 @@ class PickerCorrectionAbsolute extends PickerGenericPressure {
 
 }
 
-class PickerDelegateCorrectionAbsolute extends Ui.PickerDelegate {
+class PickerCorrectionAbsoluteDelegate extends Ui.PickerDelegate {
 
   //
   // FUNCTIONS: Ui.PickerDelegate (override/implement)

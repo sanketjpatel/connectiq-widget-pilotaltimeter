@@ -36,7 +36,7 @@ class MenuSettingsCalibration extends Ui.Menu {
 
 }
 
-class MenuDelegateSettingsCalibration extends Ui.MenuInputDelegate {
+class MenuSettingsCalibrationDelegate extends Ui.MenuInputDelegate {
 
   //
   // FUNCTIONS: Ui.MenuInputDelegate (override/implement)
@@ -48,12 +48,12 @@ class MenuDelegateSettingsCalibration extends Ui.MenuInputDelegate {
 
   function onMenuItem(item) {
     if (item == :menuCalibrationQNH) {
-      //Sys.println("DEBUG: MenuDelegateSettingsCalibration.onMenuItem(:menuCalibrationQNH)");
-      Ui.pushView(new PickerCalibrationQNH(), new PickerDelegateCalibrationQNH(), Ui.SLIDE_IMMEDIATE);
+      //Sys.println("DEBUG: MenuSettingsCalibrationDelegate.onMenuItem(:menuCalibrationQNH)");
+      Ui.pushView(new PickerCalibrationQNH(), new PickerCalibrationQNHDelegate(), Ui.SLIDE_IMMEDIATE);
     }
     else if (item == :menuCalibrationElevation) {
-      //Sys.println("DEBUG: MenuDelegateSettingsCalibration.onMenuItem(:menuCalibrationElevation)");
-      Ui.pushView(new PickerCalibrationElevation(), new PickerDelegateCalibrationElevation(), Ui.SLIDE_IMMEDIATE);
+      //Sys.println("DEBUG: MenuSettingsCalibrationDelegate.onMenuItem(:menuCalibrationElevation)");
+      Ui.pushView(new PickerCalibrationElevation(), new PickerCalibrationElevationDelegate(), Ui.SLIDE_IMMEDIATE);
     }
   }
 

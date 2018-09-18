@@ -41,7 +41,7 @@ class PickerUnitPressure extends Ui.Picker {
 
 }
 
-class PickerDelegateUnitPressure extends Ui.PickerDelegate {
+class PickerUnitPressureDelegate extends Ui.PickerDelegate {
 
   //
   // FUNCTIONS: Ui.PickerDelegate (override/implement)
@@ -54,6 +54,7 @@ class PickerDelegateUnitPressure extends Ui.PickerDelegate {
   function onAccept(_amValues) {
     // Set property and exit
     App.Properties.setValue("userUnitPressure", _amValues[0]);
+    $.PA_oSettings.load();  // ... use proper units in settings
     Ui.popView(Ui.SLIDE_IMMEDIATE);
   }
 

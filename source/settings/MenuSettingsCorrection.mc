@@ -34,7 +34,7 @@ class MenuSettingsCorrection extends Ui.Menu {
 
 }
 
-class MenuDelegateSettingsCorrection extends Ui.MenuInputDelegate {
+class MenuSettingsCorrectionDelegate extends Ui.MenuInputDelegate {
 
   //
   // FUNCTIONS: Ui.MenuInputDelegate (override/implement)
@@ -46,12 +46,12 @@ class MenuDelegateSettingsCorrection extends Ui.MenuInputDelegate {
 
   function onMenuItem(item) {
     if (item == :menuCorrectionAbsolute) {
-      //Sys.println("DEBUG: MenuDelegateSettingsCorrection.onMenuItem(:menuCorrectionAbsolute)");
-      Ui.pushView(new PickerCorrectionAbsolute(), new PickerDelegateCorrectionAbsolute(), Ui.SLIDE_IMMEDIATE);
+      //Sys.println("DEBUG: MenuSettingsCorrectionDelegate.onMenuItem(:menuCorrectionAbsolute)");
+      Ui.pushView(new PickerCorrectionAbsolute(), new PickerCorrectionAbsoluteDelegate(), Ui.SLIDE_IMMEDIATE);
     }
     else if (item == :menuCorrectionRelative) {
-      //Sys.println("DEBUG: MenuDelegateSettingsCorrection.onMenuItem(:menuCorrectionRelative)");
-      Ui.pushView(new PickerCorrectionRelative(), new PickerDelegateCorrectionRelative(), Ui.SLIDE_IMMEDIATE);
+      //Sys.println("DEBUG: MenuSettingsCorrectionDelegate.onMenuItem(:menuCorrectionRelative)");
+      Ui.pushView(new PickerCorrectionRelative(), new PickerCorrectionRelativeDelegate(), Ui.SLIDE_IMMEDIATE);
     }
   }
 

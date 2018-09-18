@@ -37,7 +37,7 @@ class MenuSettingsReference extends Ui.Menu {
 
 }
 
-class MenuDelegateSettingsReference extends Ui.MenuInputDelegate {
+class MenuSettingsReferenceDelegate extends Ui.MenuInputDelegate {
 
   //
   // FUNCTIONS: Ui.MenuInputDelegate (override/implement)
@@ -49,16 +49,16 @@ class MenuDelegateSettingsReference extends Ui.MenuInputDelegate {
 
   function onMenuItem(item) {
     if (item == :menuReferenceElevation) {
-      //Sys.println("DEBUG: MenuDelegateSettingsReference.onMenuItem(:menuReferenceElevation)");
-      Ui.pushView(new PickerReferenceElevation(), new PickerDelegateReferenceElevation(), Ui.SLIDE_IMMEDIATE);
+      //Sys.println("DEBUG: MenuSettingsReferenceDelegate.onMenuItem(:menuReferenceElevation)");
+      Ui.pushView(new PickerReferenceElevation(), new PickerReferenceElevationDelegate(), Ui.SLIDE_IMMEDIATE);
     }
     else if (item == :menuReferenceTemperature) {
-      //Sys.println("DEBUG: MenuDelegateSettingsReference.onMenuItem(:menuReferenceTemperature)");
-      Ui.pushView(new PickerReferenceTemperature(), new PickerDelegateReferenceTemperature(), Ui.SLIDE_IMMEDIATE);
+      //Sys.println("DEBUG: MenuSettingsReferenceDelegate.onMenuItem(:menuReferenceTemperature)");
+      Ui.pushView(new PickerReferenceTemperature(), new PickerReferenceTemperatureDelegate(), Ui.SLIDE_IMMEDIATE);
     }
     else if (item == :menuReferenceTemperatureAuto) {
-      //Sys.println("DEBUG: MenuDelegateSettingsReference.onMenuItem(:menuReferenceTemperatureAuto)");
-      Ui.pushView(new PickerReferenceTemperatureAuto(), new PickerDelegateReferenceTemperatureAuto(), Ui.SLIDE_IMMEDIATE);
+      //Sys.println("DEBUG: MenuSettingsReferenceDelegate.onMenuItem(:menuReferenceTemperatureAuto)");
+      Ui.pushView(new PickerReferenceTemperatureAuto(), new PickerReferenceTemperatureAutoDelegate(), Ui.SLIDE_IMMEDIATE);
     }
   }
 

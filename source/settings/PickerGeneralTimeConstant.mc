@@ -41,7 +41,7 @@ class PickerGeneralTimeConstant extends Ui.Picker {
 
 }
 
-class PickerDelegateGeneralTimeConstant extends Ui.PickerDelegate {
+class PickerGeneralTimeConstantDelegate extends Ui.PickerDelegate {
 
   //
   // FUNCTIONS: Ui.PickerDelegate (override/implement)

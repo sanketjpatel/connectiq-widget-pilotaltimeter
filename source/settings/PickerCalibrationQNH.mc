@@ -32,7 +32,7 @@ class PickerCalibrationQNH extends PickerGenericPressure {
 
 }
 
-class PickerDelegateCalibrationQNH extends Ui.PickerDelegate {
+class PickerCalibrationQNHDelegate extends Ui.PickerDelegate {
 
   //
   // FUNCTIONS: Ui.PickerDelegate (override/implement)

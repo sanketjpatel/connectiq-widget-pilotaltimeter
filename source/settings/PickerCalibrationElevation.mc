@@ -32,7 +32,7 @@ class PickerCalibrationElevation extends PickerGenericElevation {
 
 }
 
-class PickerDelegateCalibrationElevation extends Ui.PickerDelegate {
+class PickerCalibrationElevationDelegate extends Ui.PickerDelegate {
 
   //
   // FUNCTIONS: Ui.PickerDelegate (override/implement)

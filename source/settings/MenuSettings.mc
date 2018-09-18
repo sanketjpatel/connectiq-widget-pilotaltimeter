@@ -38,7 +38,7 @@ class MenuSettings extends Ui.Menu {
 
 }
 
-class MenuDelegateSettings extends Ui.MenuInputDelegate {
+class MenuSettingsDelegate extends Ui.MenuInputDelegate {
 
   //
   // FUNCTIONS: Ui.MenuInputDelegate (override/implement)
@@ -50,28 +50,28 @@ class MenuDelegateSettings extends Ui.MenuInputDelegate {
 
   function onMenuItem(item) {
     if (item == :menuSettingsCalibration) {
-      //Sys.println("DEBUG: MenuDelegateSettings.onMenuItem(:menuSettingsCalibration)");
-      Ui.pushView(new MenuSettingsCalibration(), new MenuDelegateSettingsCalibration(), Ui.SLIDE_IMMEDIATE);
+      //Sys.println("DEBUG: MenuSettingsDelegate.onMenuItem(:menuSettingsCalibration)");
+      Ui.pushView(new MenuSettingsCalibration(), new MenuSettingsCalibrationDelegate(), Ui.SLIDE_IMMEDIATE);
     }
     else if (item == :menuSettingsReference) {
-      //Sys.println("DEBUG: MenuDelegateSettings.onMenuItem(:menuSettingsReference)");
-      Ui.pushView(new MenuSettingsReference(), new MenuDelegateSettingsReference(), Ui.SLIDE_IMMEDIATE);
+      //Sys.println("DEBUG: MenuSettingsDelegate.onMenuItem(:menuSettingsReference)");
+      Ui.pushView(new MenuSettingsReference(), new MenuSettingsReferenceDelegate(), Ui.SLIDE_IMMEDIATE);
     }
     else if (item == :menuSettingsGeneral) {
-      //Sys.println("DEBUG: MenuDelegateSettings.onMenuItem(:menuSettingsGeneral)");
-      Ui.pushView(new MenuSettingsGeneral(), new MenuDelegateSettingsGeneral(), Ui.SLIDE_IMMEDIATE);
+      //Sys.println("DEBUG: MenuSettingsDelegate.onMenuItem(:menuSettingsGeneral)");
+      Ui.pushView(new MenuSettingsGeneral(), new MenuSettingsGeneralDelegate(), Ui.SLIDE_IMMEDIATE);
     }
     else if (item == :menuSettingsUnits) {
-      //Sys.println("DEBUG: MenuDelegateSettings.onMenuItem(:menuSettingsUnits)");
-      Ui.pushView(new MenuSettingsUnits(), new MenuDelegateSettingsUnits(), Ui.SLIDE_IMMEDIATE);
+      //Sys.println("DEBUG: MenuSettingsDelegate.onMenuItem(:menuSettingsUnits)");
+      Ui.pushView(new MenuSettingsUnits(), new MenuSettingsUnitsDelegate(), Ui.SLIDE_IMMEDIATE);
     }
     else if (item == :menuSettingsCorrection) {
-      //Sys.println("DEBUG: MenuDelegateSettings.onMenuItem(:menuSettingsCorrection)");
-      Ui.pushView(new MenuSettingsCorrection(), new MenuDelegateSettingsCorrection(), Ui.SLIDE_IMMEDIATE);
+      //Sys.println("DEBUG: MenuSettingsDelegate.onMenuItem(:menuSettingsCorrection)");
+      Ui.pushView(new MenuSettingsCorrection(), new MenuSettingsCorrectionDelegate(), Ui.SLIDE_IMMEDIATE);
     }
     else if (item == :menuSettingsAbout) {
-      //Sys.println("DEBUG: MenuDelegateSettings.onMenuItem(:menuSettingsAbout)");
-      Ui.pushView(new MenuSettingsAbout(), new MenuDelegateSettingsAbout(), Ui.SLIDE_IMMEDIATE);
+      //Sys.println("DEBUG: MenuSettingsDelegate.onMenuItem(:menuSettingsAbout)");
+      Ui.pushView(new MenuSettingsAbout(), new MenuSettingsAboutDelegate(), Ui.SLIDE_IMMEDIATE);
     }
   }
 

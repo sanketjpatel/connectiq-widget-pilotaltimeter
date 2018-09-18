@@ -36,7 +36,7 @@ class MenuSettingsUnits extends Ui.Menu {
 
 }
 
-class MenuDelegateSettingsUnits extends Ui.MenuInputDelegate {
+class MenuSettingsUnitsDelegate extends Ui.MenuInputDelegate {
 
   //
   // FUNCTIONS: Ui.MenuInputDelegate (override/implement)
@@ -48,20 +48,20 @@ class MenuDelegateSettingsUnits extends Ui.MenuInputDelegate {
 
   function onMenuItem(item) {
     if (item == :menuUnitElevation) {
-      //Sys.println("DEBUG: MenuDelegateSettingsUnits.onMenuItem(:menuUnitElevation)");
-      Ui.pushView(new PickerUnitElevation(), new PickerDelegateUnitElevation(), Ui.SLIDE_IMMEDIATE);
+      //Sys.println("DEBUG: MenuSettingsUnitsDelegate.onMenuItem(:menuUnitElevation)");
+      Ui.pushView(new PickerUnitElevation(), new PickerUnitElevationDelegate(), Ui.SLIDE_IMMEDIATE);
     }
     else if (item == :menuUnitPressure) {
-      //Sys.println("DEBUG: MenuDelegateSettingsUnits.onMenuItem(:menuUnitPressure)");
-      Ui.pushView(new PickerUnitPressure(), new PickerDelegateUnitPressure(), Ui.SLIDE_IMMEDIATE);
+      //Sys.println("DEBUG: MenuSettingsUnitsDelegate.onMenuItem(:menuUnitPressure)");
+      Ui.pushView(new PickerUnitPressure(), new PickerUnitPressureDelegate(), Ui.SLIDE_IMMEDIATE);
     }
     else if (item == :menuUnitTemperature) {
-      //Sys.println("DEBUG: MenuDelegateSettingsUnits.onMenuItem(:menuUnitTemperature)");
-      Ui.pushView(new PickerUnitTemperature(), new PickerDelegateUnitTemperature(), Ui.SLIDE_IMMEDIATE);
+      //Sys.println("DEBUG: MenuSettingsUnitsDelegate.onMenuItem(:menuUnitTemperature)");
+      Ui.pushView(new PickerUnitTemperature(), new PickerUnitTemperatureDelegate(), Ui.SLIDE_IMMEDIATE);
     }
     else if (item == :menuUnitTimeUTC) {
-      //Sys.println("DEBUG: MenuDelegateSettingsUnits.onMenuItem(:menuUnitTimeUTC)");
-      Ui.pushView(new PickerUnitTimeUTC(), new PickerDelegateUnitTimeUTC(), Ui.SLIDE_IMMEDIATE);
+      //Sys.println("DEBUG: MenuSettingsUnitsDelegate.onMenuItem(:menuUnitTimeUTC)");
+      Ui.pushView(new PickerUnitTimeUTC(), new PickerUnitTimeUTCDelegate(), Ui.SLIDE_IMMEDIATE);
     }
   }
 

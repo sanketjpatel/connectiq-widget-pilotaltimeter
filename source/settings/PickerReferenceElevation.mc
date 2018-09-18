@@ -32,7 +32,7 @@ class PickerReferenceElevation extends PickerGenericElevation {
 
 }
 
-class PickerDelegateReferenceElevation extends Ui.PickerDelegate {
+class PickerReferenceElevationDelegate extends Ui.PickerDelegate {
 
   //
   // FUNCTIONS: Ui.PickerDelegate (override/implement)

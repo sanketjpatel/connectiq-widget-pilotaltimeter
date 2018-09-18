@@ -32,7 +32,7 @@ class PickerReferenceTemperature extends PickerGenericTemperature {
 
 }
 
-class PickerDelegateReferenceTemperature extends Ui.PickerDelegate {
+class PickerReferenceTemperatureDelegate extends Ui.PickerDelegate {
 
   //
   // FUNCTIONS: Ui.PickerDelegate (override/implement)

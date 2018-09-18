@@ -57,7 +57,7 @@ class PickerCorrectionRelative extends Ui.Picker {
 
 }
 
-class PickerDelegateCorrectionRelative extends Ui.PickerDelegate {
+class PickerCorrectionRelativeDelegate extends Ui.PickerDelegate {
 
   //
   // FUNCTIONS: Ui.PickerDelegate (override/implement)

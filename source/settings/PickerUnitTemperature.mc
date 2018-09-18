@@ -41,7 +41,7 @@ class PickerUnitTemperature extends Ui.Picker {
 
 }
 
-class PickerDelegateUnitTemperature extends Ui.PickerDelegate {
+class PickerUnitTemperatureDelegate extends Ui.PickerDelegate {
 
   //
   // FUNCTIONS: Ui.PickerDelegate (override/implement)
@@ -54,6 +54,7 @@ class PickerDelegateUnitTemperature extends Ui.PickerDelegate {
   function onAccept(_amValues) {
     // Set property and exit
     App.Properties.setValue("userUnitTemperature", _amValues[0]);
+    $.PA_oSettings.load();  // ... use proper units in settings
     Ui.popView(Ui.SLIDE_IMMEDIATE);
   }
 

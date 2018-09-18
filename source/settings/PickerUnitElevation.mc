@@ -41,7 +41,7 @@ class PickerUnitElevation extends Ui.Picker {
 
 }
 
-class PickerDelegateUnitElevation extends Ui.PickerDelegate {
+class PickerUnitElevationDelegate extends Ui.PickerDelegate {
 
   //
   // FUNCTIONS: Ui.PickerDelegate (override/implement)
@@ -54,6 +54,7 @@ class PickerDelegateUnitElevation extends Ui.PickerDelegate {
   function onAccept(_amValues) {
     // Set property and exit
     App.Properties.setValue("userUnitElevation", _amValues[0]);
+    $.PA_oSettings.load();  // ... use proper units in settings
     Ui.popView(Ui.SLIDE_IMMEDIATE);
   }
 
