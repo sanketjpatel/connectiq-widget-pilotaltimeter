@@ -46,18 +46,21 @@ class PickerGenericPressure extends Ui.Picker {
 
     // Use user-specified pressure unit (NB: metric units are always used internally)
     var sUnit;
+    var iMaxSignificant;
     if(_iUnit == Sys.UNIT_STATUTE) {
       sUnit = "inHg";
+      iMaxSignificant = 31;
       _fValue *= 0.2953f;  // ... from pascals
-      if(_fValue > 32999.0f) {
-        _fValue = 32999.0f;
+      if(_fValue > 31999.0f) {
+        _fValue = 31999.0f;
       }
-      else if(_fValue < -32999.0f) {
-        _fValue = -32999.0f;
+      else if(_fValue < -31999.0f) {
+        _fValue = -31999.0f;
       }
     }
     else {
       sUnit = "mb";
+      iMaxSignificant = 10;
       _fValue *= 0.1f;  // ... from pascals
       if(_fValue > 10999.0f) {
         _fValue = 10999.0f;
@@ -66,10 +69,8 @@ class PickerGenericPressure extends Ui.Picker {
         _fValue = -10999.0f;
       }
     }
-    if(!_bAllowNegative) {
-      if(_fValue < 0.0f) {
-        _fValue = 0.0f;
-      }
+    if(!_bAllowNegative and _fValue < 0.0f) {
+      _fValue = 0.0f;
     }
 
     // Split components
@@ -88,7 +89,7 @@ class PickerGenericPressure extends Ui.Picker {
     Picker.initialize({
       :title => new Ui.Text({ :text => Lang.format("$1$ [$2$]", [_sTitle, sUnit]), :font => Gfx.FONT_TINY, :locX=>Ui.LAYOUT_HALIGN_CENTER, :locY=>Ui.LAYOUT_VALIGN_BOTTOM, :color => Gfx.COLOR_BLUE }),
           :pattern => [ _bAllowNegative ? new PickerFactoryDictionary([-1, 1], ["-", "+"], null) : new Ui.Text({}),
-                    new PickerFactoryNumber(0, _iUnit == Sys.UNIT_STATUTE ? 32 : 10, _iUnit == Sys.UNIT_STATUTE ? { :langFormat => "$1$." } : null),
+                    new PickerFactoryNumber(0, iMaxSignificant, _iUnit == Sys.UNIT_STATUTE ? { :langFormat => "$1$." } : null),
                     new PickerFactoryNumber(0, 9, null),
                     new PickerFactoryNumber(0, 9, _iUnit == Sys.UNIT_METRIC ? { :langFormat => "$1$." } : null),
                     new PickerFactoryNumber(0, 9, null) ],
