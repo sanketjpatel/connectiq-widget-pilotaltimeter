@@ -1,2 +1,6 @@
+* 1.0.20180919a
+  - FIX: "auto" temperature retrieval from sensor (REQUIRES EXTERNAL SENSOR)
+
 * 1.0.20180915a
   - Post Tenebras Lux
+
