@@ -192,6 +192,7 @@ class PA_Altimeter {
     if(_fTemperatureActual != null) {
       self.fTemperatureActual = _fTemperatureActual;
       self.bTemperatureActualSet = true;
+      //Sys.println(Lang.format("DEBUG: Temperature, actual (set) = $1$", [self.fTemperatureActual]));
     }
     else {
       self.bTemperatureActualSet = false;
@@ -207,10 +208,10 @@ class PA_Altimeter {
     self.fTemperatureISA = self.ISA_TEMPERATURE_MSL + self.ISA_TEMPERATURE_LRATE * self.fAltitudeActual;
     //Sys.println(Lang.format("DEBUG: Temperature, ISA = $1$", [self.fTemperatureISA]));
     // ... actual
-    if(!self.bTemperatureActualSet) {
+    if(!self.bTemperatureActualSet or self.fTemperatureActual == null) {
       self.fTemperatureActual = self.fTemperatureISA + $.PA_oSettings.fReferenceTemperatureISAOffset;
     }
-    //Sys.println(Lang.format("DEBUG: Temperature, actual = $1$", [self.fTemperatureActual]));
+    //Sys.println(Lang.format("DEBUG: Temperature, actual (calculated) = $1$", [self.fTemperatureActual]));
 
     // Derive altitude
     // ... density

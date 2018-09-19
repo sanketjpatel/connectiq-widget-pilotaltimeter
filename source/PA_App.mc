@@ -71,7 +71,7 @@ class PA_App extends App.AppBase {
     //Sys.println("DEBUG: PA_App.onStart()");
 
     // Enable sensor events
-    Sensor.setEnabledSensors([]);  // ... we need just the pressure and temperature
+    Sensor.setEnabledSensors([Sensor.SENSOR_TEMPERATURE]);
     Sensor.enableSensorEvents(method(:onSensorEvent));
 
     // Start UI update timer (every multiple of 60 seconds)
@@ -138,8 +138,10 @@ class PA_App extends App.AppBase {
 
     // Process sensor data
     // ... temperature
-    if($.PA_oSettings.bReferenceTemperatureAuto and _oSensorInfo has :temperature) {
-      $.PA_oAltimeter.setTemperatureActual(_oSensorInfo.temperature+273.15f);  // ... altimeter internals are °K
+    if($.PA_oSettings.bReferenceTemperatureAuto) {
+      if(_oSensorInfo has :temperature and _oSensorInfo.temperature != null) {
+        $.PA_oAltimeter.setTemperatureActual(_oSensorInfo.temperature+273.15f);  // ... altimeter internals are °K
+      }
     }
     else {
       $.PA_oAltimeter.setTemperatureActual(null);

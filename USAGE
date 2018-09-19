@@ -31,16 +31,19 @@ Settings
 Enter the Settings menu by pressing the MENU button (long-pressing the UP button).
 
 You may then specify the following settings:
+ - Calibration -> QNH:
+   calibrate the altimeter using the current known QNH
  - Calibration -> Elevation:
    calibrate the altimeter using the current known elevation
    (QNH shall be adjusted accordingly)
- - Calibration -> QNH:
-   calibrate the altimeter using the current known QNH
  - Reference -> Elevation
    set the reference elevation for AGL (Above Ground Level) height calculation
  - Reference -> Temperature
    set the current external temperature for Density Altitude calculation
    (the offset to the standard ISA temperature shall be saved internally)
+ - Reference -> Temperature Source
+   whether to use the temperature "set" by the user or that "auto"-matically
+   obtained from the device; REQUIRES AN EXTERNAL SENSOR (e.g. Garmin Tempe)
  - General -> Time Constant:
    time constants (in seconds) used for exponentially averaging (EMA) the
    device's sensor input
