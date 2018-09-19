@@ -1,13 +1,13 @@
 // -*- mode:java; tab-width:2; c-basic-offset:2; intent-tabs-mode:nil; -*- ex: set tabstop=2 expandtab:
 
-// Pilot ICAO/ISA Altimeter (Pilot Altimeter)
+// Pilot ICAO/ISA Altimeter (PilotAltimeter)
 // Copyright (C) 2018 Cedric Dufour <http://cedric.dufour.name>
 //
-// Pilot ICAO/ISA Altimeter (Pilot Altimeter) is free software:
+// Pilot ICAO/ISA Altimeter (PilotAltimeter) is free software:
 // you can redistribute it and/or modify it under the terms of the GNU General
 // Public License as published by the Free Software Foundation, Version 3.
 //
-// Pilot ICAO/ISA Altimeter (Pilot Altimeter) is distributed in the hope that it
+// Pilot ICAO/ISA Altimeter (PilotAltimeter) is distributed in the hope that it
 // will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 //
@@ -259,7 +259,7 @@ class PA_Settings {
     self.fCorrectionAbsolute = _fCorrectionAbsolute;
   }
 
-  function setCorrectionRelative(_fCorrectionRelative) {  // [%]
+  function setCorrectionRelative(_fCorrectionRelative) {
     if(_fCorrectionRelative == null) {
       _fCorrectionRelative = 1.0f;
     }

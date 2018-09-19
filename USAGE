@@ -1,12 +1,12 @@
-Pilot Altimeter (Garmin ConnectIQ) Widget
-=========================================
+PilotAltimeter (Garmin ConnectIQ) Widget
+========================================
 Usage instructions
 
 
 Global View
 -----------
 
-Pilot Altimeter displays altitude data in multiple view, which you can switch
+PilotAltimeter displays altitude data in multiple view, which you can switch
 thanks to the SELECT button:
  - AMSL (Above Mean Sea Level) Altitude, based on user-specified QNH:
    [top] Actual altitude
@@ -66,7 +66,7 @@ You may then specify the following settings:
 Measurement and Calculation Methods
 -----------------------------------
 
-Pilot Altimeter relies on ConnectIQ's Activity.Info:rawAmbientPressure reading,
+PilotAltimeter relies on ConnectIQ's Activity.Info:rawAmbientPressure reading,
 namely (hopefully) the raw barometric pressure (QFE) as measured by the device's
 sensor.
 
@@ -88,8 +88,8 @@ Namely:
 Calibrating the Device Sensor
 -----------------------------
 
-Pilot Altimeter allows you to calibrate/correct your device's sensor using
-the following formulas:
+PilotAltimeter allows you to calibrate/correct your device's barometric sensor
+using the following formulas:
 
    QFEcalibrated = QFEsensor * Crel + Cabs
 
@@ -99,11 +99,12 @@ If you suspect your device's sensor is inaccurate, you shall:
    *raw* QFE and a reliable, calibrated, reference barometer
 
 2. import those readings in a LibreOffice Calc (or Microsoft Excel) spreadsheet
-   and obtain the Crel and Cabs constants by performing a linear regression:
+   and obtain the Crel and Cabs coefficients by performing a linear regression:
 
      https://help.libreoffice.org/Calc/Regression_Analysis
      (Crel = Slope and Cabs = Intercept)
 
-3. set Correction -> Relative/Absolute values to the discovered Crel and Cabs
+3. set Correction -> Relative/Absolute values to the calculated coefficients
 
 Not an easy feat. But if you must...
+

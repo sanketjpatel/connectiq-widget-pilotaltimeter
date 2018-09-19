@@ -1,5 +1,5 @@
-Pilot Altimeter (Garmin ConnectIQ) Widget
-=====================================
+PilotAltimeter (Garmin ConnectIQ) Widget
+========================================
 Build and installation instructions
 
 Please note these instructions are targeted towards *nix (Linux or Mac OS X)
@@ -23,7 +23,7 @@ From here, we'll assume the SDK is located (decompressed) in:
   PATH> /opt/connectiq-sdk-linux
 
 
-Get hold of Pilot Altimeter source code:
+Get hold of PilotAltimeter source code:
 
   URL> https://github.com/cedric-dufour/connectiq-widget-pilotaltimeter
 
@@ -116,7 +116,7 @@ Connect your device via USB (as USB storage) and install the application:
 Alternate devices
 -----------------
 
-Pilot Altimeter is being developed primarily for and using a D2 Charlie device.
+PilotAltimeter is being developed primarily for and using a D2 Charlie device.
 
 However, you can readily build and install it on any "compatible" device
 (featuring ConnectIQ 2.1 and above), e.g. the Fenix 5X:
