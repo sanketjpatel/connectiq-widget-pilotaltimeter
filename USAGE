@@ -98,6 +98,22 @@ Namely:
   2.b  ALT  = ALTisa - 288.15 * (1 - (QNH / 1013.25)^0.190263) / 0.0065
 
 
+About Density Altitude
+----------------------
+
+Ideally, an external temperature sensor (e.g. Garmin Tempe) ought to be used
+to obtain an accurate reading of the current temperature and, consequently,
+an accurate Density Altitude reading.
+
+Without an external temperature sensor, one MUST set the temperature manually
+AFTER calibrating the altimeter as per QNH or actual elevation.
+The reason for this is that the OFFSET to the ISA temperature (depending on the
+elevation) is stored internally, rather than the absolute temperature value.
+This allows to obtain a meaningful Density Altitude value even when the current
+altitude is different from the elevation at which the temperature was set, assuming
+the actual temperature lapse rate is close to the ISA definition (6.5°K/1'000m).
+
+
 Calibrating the Device Sensor
 -----------------------------
 
