@@ -1,3 +1,7 @@
+* 1.0.20181008a:
+  - FIX: Elevation truncated instead of rounded-down/up
+  - MOD: Display/set temperature with subdigit (1 decimal) precision
+
 * 1.0.20180919a
   - FIX: "auto" temperature retrieval from sensor (REQUIRES EXTERNAL SENSOR)
 
