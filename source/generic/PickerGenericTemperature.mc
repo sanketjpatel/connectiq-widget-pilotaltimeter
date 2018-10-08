@@ -46,20 +46,48 @@ class PickerGenericTemperature extends Ui.Picker {
 
     // Use user-specified temperature unit (NB: metric units are always used internally)
     var sUnit;
+    var iMaxSignificant;
     if(_iUnit == Sys.UNIT_STATUTE) {
       sUnit = "°F";
-      _fValue = _fValue*1.8f+32.0f;  // ... from celsius
+      iMaxSignificant = 19;
+      _fValue = _fValue*18.0f+320.0f;  // ... from celsius
+      if(_fValue > 1999.0f) {
+        _fValue = 1999.0f;
+      }
+      else if(_fValue < -1999.0f) {
+        _fValue = -1999.0f;
+      }
     }
     else {
       sUnit = "°C";
+      iMaxSignificant = 9;
+      _fValue = _fValue*10.0f;
+      if(_fValue > 999.0f) {
+        _fValue = 999.0f;
+      }
+      else if(_fValue < -999.0f) {
+        _fValue = -999.0f;
+      }
     }
 
+    // Split components
+    var amValues = new [4];
+    amValues[0] = _fValue < 0.0f ? 0 : 1;
+    _fValue = _fValue.abs() + 0.05f;
+    amValues[3] = _fValue.toNumber() % 10;
+    _fValue = _fValue / 10.0f;
+    amValues[2] = _fValue.toNumber() % 10;
+    _fValue = _fValue / 10.0f;
+    amValues[1] = _fValue.toNumber();
+
     // Initialize picker
-    var oFactory = new PickerFactoryNumber(-99, _iUnit == Sys.UNIT_STATUTE ? 199 : 99, null);
     Picker.initialize({
       :title => new Ui.Text({ :text => Lang.format("$1$ [$2$]", [_sTitle, sUnit]), :font => Gfx.FONT_TINY, :locX=>Ui.LAYOUT_HALIGN_CENTER, :locY=>Ui.LAYOUT_VALIGN_BOTTOM, :color => Gfx.COLOR_BLUE }),
-      :pattern => [ oFactory ],
-      :defaults => [ oFactory.indexOf(_fValue.toNumber()) ]
+      :pattern => [ new PickerFactoryDictionary([-1, 1], ["-", "+"], null),
+                    new PickerFactoryNumber(0, iMaxSignificant, null),
+                    new PickerFactoryNumber(0, 9, { :langFormat => "$1$." }),
+                    new PickerFactoryNumber(0, 9, null) ],
+      :defaults => amValues
     });
   }
 
@@ -82,11 +110,15 @@ class PickerGenericTemperature extends Ui.Picker {
     }
 
     // Assemble components
-    var fValue = _amValues[0].toFloat();
+    var fValue = _amValues[1]*100.0f + _amValues[2]*10.0f + _amValues[3];
+    fValue *= _amValues[0];
 
     // Use user-specified temperature unit (NB: metric units are always used internally)
     if(_iUnit == Sys.UNIT_STATUTE) {
-      fValue = (fValue-32.0f)/1.8f;  // ... to celsius
+      fValue = (fValue-320.0f)/18.0f;  // ... to celsius
+    }
+    else {
+      fValue /= 10.0f;
     }
 
     // Return value

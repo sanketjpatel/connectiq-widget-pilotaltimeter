@@ -338,7 +338,7 @@ class PA_View extends Ui.View {
     if(!_bDelta) {
       fValue += $.PA_oSettings.fUnitTemperatureOffset;
     }
-    var sValue = _bDelta ? fValue.format("%+d") : fValue.format("%d");
+    var sValue = _bDelta ? fValue.format("%+.1f") : fValue.format("%.1f");
     return Lang.format("$1$°$2$", [sValue, $.PA_oSettings.sUnitTemperature]);
   }
 
