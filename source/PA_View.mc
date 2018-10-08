@@ -305,14 +305,14 @@ class PA_View extends Ui.View {
 
   function stringElevation(_fElevation, _bDelta) {
     var fValue = _fElevation * $.PA_oSettings.fUnitElevationCoefficient;
-    var sValue = _bDelta ? fValue.format("%+d") : fValue.format("%d");
+    var sValue = _bDelta ? fValue.format("%+.0f") : fValue.format("%.0f");
     return Lang.format("$1$ $2$", [sValue, $.PA_oSettings.sUnitElevation]);
   }
 
   function stringFlightLevel(_fElevation, _bAsFeet) {
     var fValue = _fElevation * 3.280839895f;
     if(_bAsFeet) {
-      return Lang.format("$1$ ft", [fValue.format("%d")]);
+      return Lang.format("$1$ ft", [fValue.format("%.0f")]);
     }
     else {
       var fValue2 = Math.round(fValue/500.0f)*5.0f;  // [FL]
@@ -323,7 +323,7 @@ class PA_View extends Ui.View {
       if(fValue-100.0f*fValue2 < -100.0f) {
         sSign = "-";
       }
-      return Lang.format("FL$1$$2$", [fValue2.format("%d"), sSign]);
+      return Lang.format("FL$1$$2$", [fValue2.format("%.0f"), sSign]);
     }
   }
 
