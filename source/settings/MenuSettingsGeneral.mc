@@ -28,7 +28,6 @@ class MenuSettingsGeneral extends Ui.Menu {
   function initialize() {
     Menu.initialize();
     Menu.setTitle(Ui.loadResource(Rez.Strings.titleSettingsGeneral));
-    Menu.addItem(Ui.loadResource(Rez.Strings.titleGeneralTimeConstant), :menuGeneralTimeConstant);
     Menu.addItem(Ui.loadResource(Rez.Strings.titleGeneralBackgroundColor), :menuGeneralBackgroundColor);
   }
 
@@ -45,11 +44,7 @@ class MenuSettingsGeneralDelegate extends Ui.MenuInputDelegate {
   }
 
   function onMenuItem(item) {
-    if (item == :menuGeneralTimeConstant) {
-      //Sys.println("DEBUG: MenuSettingsGeneralDelegate.onMenuItem(:menuGeneralTimeConstant)");
-      Ui.pushView(new PickerGeneralTimeConstant(), new PickerGeneralTimeConstantDelegate(), Ui.SLIDE_IMMEDIATE);
-    }
-    else if (item == :menuGeneralBackgroundColor) {
+    if (item == :menuGeneralBackgroundColor) {
       //Sys.println("DEBUG: MenuSettingsGeneralDelegate.onMenuItem(:menuGeneralBackgroundColor)");
       Ui.pushView(new PickerGeneralBackgroundColor(), new PickerGeneralBackgroundColorDelegate(), Ui.SLIDE_IMMEDIATE);
     }

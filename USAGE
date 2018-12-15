@@ -57,9 +57,6 @@ You may then specify the following settings:
  - Reference -> Temperature Source
    whether to use the temperature "set" by the user or that "auto"-matically
    obtained from the device; REQUIRES AN EXTERNAL SENSOR (e.g. Garmin Tempe)
- - General -> Time Constant:
-   time constants (in seconds) used for exponentially averaging (EMA) the
-   device's sensor input
  - General -> Background Color:
    the background color
  - Units -> Elevation Unit:

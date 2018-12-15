@@ -55,10 +55,9 @@ class PA_Altimeter {
   //
 
   // Pressure
-  public var fQFE;  // [Pa]
-  public var fQFE_calibrated;  // [Pa]
-  public var fQFE_raw;  // [Pa]
   public var fQNH;  // [Pa]
+  public var fQFE_raw;  // [Pa]
+  public var fQFE;  // [Pa]
 
   // Altitude
   public var fAltitudeISA;  // [m]
@@ -70,25 +69,20 @@ class PA_Altimeter {
   public var fTemperatureActual;  // [°K]
   private var bTemperatureActualSet;
 
-  // Filter (EMA)
-  private var fEmaCoefficient_present;
-  private var fEmaCoefficient_past;
-
   
   //
   // FUNCTIONS: self
   //
 
   function initialize() {
+    self.fQNH = self.ISA_PRESSURE_MSL;
     self.reset();
   }
 
   function reset() {
     // Pressure
-    self.fQFE = null;
-    self.fQFE_calibrated = null;
     self.fQFE_raw = null;
-    self.fQNH = self.ISA_PRESSURE_MSL;
+    self.fQFE = null;
 
     // Altitude
     self.fAltitudeISA = null;
@@ -99,25 +93,11 @@ class PA_Altimeter {
     self.fTemperatureISA = null;
     self.fTemperatureActual = null;
     self.bTemperatureActualSet = false;
-
-    // Filter (EMA)
-    self.fEmaCoefficient_present = 1.0f;
-    self.fEmaCoefficient_past = 0.0f;
   }
 
   function importSettings() {
     // QNH
     self.fQNH = $.PA_oSettings.fCalibrationQNH;
-    
-    // Time constant <-> Filter (EMA)
-    if($.PA_oSettings.iGeneralTimeConstant) {
-      self.fEmaCoefficient_past = Math.pow(Math.E, -1.0f/$.PA_oSettings.iGeneralTimeConstant);
-    }
-    else {
-      self.fEmaCoefficient_past = 0.0f;
-    }
-    self.fEmaCoefficient_present = 1.0f - self.fEmaCoefficient_past;
-    //Sys.println(Lang.format("DEBUG: EMA coefficient = $1$", [self.fEmaCoefficient_present]));
   }
 
   function setQFE(_fQFE) {  // [Pa]
@@ -126,17 +106,8 @@ class PA_Altimeter {
     //Sys.println(Lang.format("DEBUG: QFE (raw) = $1$", [self.fQFE_raw]));
 
     // Calibrated value
-    self.fQFE_calibrated = self.fQFE_raw * $.PA_oSettings.fCorrectionRelative + $.PA_oSettings.fCorrectionAbsolute;
-    //Sys.println(Lang.format("DEBUG: QFE (calibrated) = $1$", [self.fQFE_calibrated]));
-
-    // Final (EMA-filtered) value
-    if(self.fQFE == null) {
-      self.fQFE = self.fQFE_calibrated;
-    }
-    else {
-      self.fQFE = self.fEmaCoefficient_present * self.fQFE_calibrated + self.fEmaCoefficient_past * self.fQFE;
-    }
-    //Sys.println(Lang.format("DEBUG: QFE (filtered) = $1$", [self.fQFE]));
+    self.fQFE = self.fQFE_raw * $.PA_oSettings.fCorrectionRelative + $.PA_oSettings.fCorrectionAbsolute;
+    //Sys.println(Lang.format("DEBUG: QFE (calibrated) = $1$", [self.fQFE]));
 
     // Derive altitudes (ICAO formula)
     // ... ISA (QNH=QNE)

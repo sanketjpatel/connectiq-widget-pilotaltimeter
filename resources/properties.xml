@@ -5,7 +5,6 @@
   <property id="userReferenceElevation" type="float">0.0</property>
   <property id="userReferenceTemperatureISAOffset" type="float">0.0</property>
   <property id="userReferenceTemperatureAuto" type="boolean">false</property>
-  <property id="userGeneralTimeConstant" type="number">3</property>
   <property id="userGeneralBackgroundColor" type="number">0</property>
   <property id="userUnitElevation" type="number">-1</property>
   <property id="userUnitPressure" type="number">-1</property>

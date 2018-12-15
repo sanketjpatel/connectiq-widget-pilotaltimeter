@@ -21,7 +21,6 @@
   <string id="titleReferenceTemperatureAuto">Temperature Source</string>
   <!-- Menu (general) -->
   <string id="titleSettingsGeneral">General</string>
-  <string id="titleGeneralTimeConstant">Time Constant</string>
   <string id="titleGeneralBackgroundColor">Background Color</string>
   <string id="valueColorWhite">White</string>
   <string id="valueColorBlack">Black</string>

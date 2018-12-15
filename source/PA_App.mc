@@ -148,8 +148,8 @@ class PA_App extends App.AppBase {
     }
     // ... pressure
     var oActivityInfo = Activity.getActivityInfo();  // ... we need *raw ambient* pressure
-    if(oActivityInfo has :rawAmbientPressure and oActivityInfo.rawAmbientPressure != null) {
-      $.PA_oAltimeter.setQFE(oActivityInfo.rawAmbientPressure);
+    if(oActivityInfo has :ambientPressure and oActivityInfo.ambientPressure != null) {
+      $.PA_oAltimeter.setQFE(oActivityInfo.ambientPressure);
     }
 
     // UI update

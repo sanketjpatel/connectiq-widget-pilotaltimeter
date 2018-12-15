@@ -34,7 +34,6 @@ class PA_Settings {
   public var fReferenceTemperatureISAOffset;
   public var bReferenceTemperatureAuto;
   // ... general
-  public var iGeneralTimeConstant;
   public var iGeneralBackgroundColor;
   // ... units
   public var iUnitElevation;
@@ -71,7 +70,6 @@ class PA_Settings {
     self.setReferenceTemperatureISAOffset(App.Properties.getValue("userReferenceTemperatureISAOffset"));
     self.setReferenceTemperatureAuto(App.Properties.getValue("userReferenceTemperatureAuto"));
     // ... general
-    self.setGeneralTimeConstant(App.Properties.getValue("userGeneralTimeConstant"));
     self.setGeneralBackgroundColor(App.Properties.getValue("userGeneralBackgroundColor"));
     // ... units
     self.setUnitElevation(App.Properties.getValue("userUnitElevation"));
@@ -128,19 +126,6 @@ class PA_Settings {
       _bReferenceTemperatureAuto = false;
     }
     self.bReferenceTemperatureAuto = _bReferenceTemperatureAuto;
-  }
-
-  function setGeneralTimeConstant(_iGeneralTimeConstant) {
-    if(_iGeneralTimeConstant == null) {
-      _iGeneralTimeConstant = 3;
-    }
-    else if(_iGeneralTimeConstant > 10) {
-      _iGeneralTimeConstant = 10;
-    }
-    else if(_iGeneralTimeConstant < 0) {
-      _iGeneralTimeConstant = 0;
-    }
-    self.iGeneralTimeConstant = _iGeneralTimeConstant;
   }
 
   function setGeneralBackgroundColor(_iGeneralBackgroundColor) {
