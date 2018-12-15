@@ -1,3 +1,6 @@
+* 1.0.20181215a:
+  - MOD: Switched data filtering to Garmin's internal algorithm
+
 * 1.0.20181008a:
   - FIX: Elevation truncated instead of rounded-down/up
   - MOD: Display/set temperature with subdigit (1 decimal) precision
