@@ -3,7 +3,7 @@ PilotAltimeter (Garmin ConnectIQ) Widget
 Pilot ICAO/ISA Altimeter for Garmin ConnectIQ devices
 
 
-   ![PilotAltimeter-Overview](PilotAltimeter-Overview.jpg)
+   ![PilotAltimeter-Overview](overview.jpg)
 
 
 PilotAltimeter is a Garmin ConnectIQ Widget that displays:

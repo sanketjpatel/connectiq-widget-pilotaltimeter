@@ -44,33 +44,43 @@ Settings
 Enter the Settings menu by pressing the MENU button (long-pressing the UP button).
 
 You may then specify the following settings:
- - Calibration -> QNH:
-   calibrate the altimeter using the current known QNH
- - Calibration -> Elevation:
-   calibrate the altimeter using the current known elevation
-   (QNH shall be adjusted accordingly)
- - Reference -> Elevation
-   set the reference elevation for AGL (Above Ground Level) height calculation
- - Reference -> Temperature
-   set the current external temperature for Density Altitude calculation
-   (the offset to the standard ISA temperature shall be saved internally)
- - Reference -> Temperature Source
-   whether to use the temperature "set" by the user or that "auto"-matically
-   obtained from the device; REQUIRES AN EXTERNAL SENSOR (e.g. Garmin Tempe)
- - General -> Background Color:
-   the background color
- - Units -> Elevation Unit:
-   preferred units for displaying elevation/altitude values
- - Units -> Pressure Unit:
-   preferred units for displaying pressure values
- - Units -> Temperature Unit:
-   preferred units for displaying temperature values
- - Units -> Timezone:
-   display Local Time (LT) or Universal Time Coordinates (UTC/Z)
- - Correction -> Absolute:
-   set the absolute device's sensor error correction
- - Correction -> Relative:
-   set the relative device's sensor error correction
+
+* Calibration
+  - QNH:
+    calibrate the altimeter using the current known QNH
+  - Elevation:
+    calibrate the altimeter using the current known elevation
+    (QNH shall be adjusted accordingly)
+
+* Reference
+  - Elevation
+    set the reference elevation for AGL (Above Ground Level) height calculation
+  - Temperature
+    set the current external temperature for Density Altitude calculation
+    (the offset to the standard ISA temperature shall be saved internally)
+  - Temperature Source
+    whether to use the temperature "set" by the user or that "auto"-matically
+    obtained from the device; REQUIRES AN EXTERNAL SENSOR (e.g. Garmin Tempe)
+
+* General
+  - Background Color:
+    the background color
+
+* Units
+  - Elevation:
+    preferred units for displaying elevation/altitude values
+  - Pressure:
+    preferred units for displaying pressure values
+  - Temperature:
+    preferred units for displaying temperature values
+  - Timezone:
+    display Local Time (LT) or Universal Time Coordinates (UTC/Z)
+
+* Correction
+  - Absolute:
+    set the absolute device's sensor error correction
+  - Relative:
+    set the relative device's sensor error correction
 
 
 Measurement and Calculation Methods
