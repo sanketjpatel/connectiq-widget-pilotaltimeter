@@ -27,7 +27,7 @@ class PickerGenericTemperature extends Ui.Picker {
   // FUNCTIONS: Ui.Picker (override/implement)
   //
 
-  function initialize(_sTitle, _fValue, _iUnit) {
+  function initialize(_sTitle, _fValue, _iUnit, _bAllowNegative) {
     // Input validation
     // ... unit
     if(_iUnit == null or _iUnit < 0) {
@@ -44,13 +44,13 @@ class PickerGenericTemperature extends Ui.Picker {
       _fValue = 0.0f;
     }
 
-    // Use user-specified temperature unit (NB: metric units are always used internally)
+    // Use user-specified temperature unit (NB: SI units are always used internally)
     var sUnit;
     var iMaxSignificant;
     if(_iUnit == Sys.UNIT_STATUTE) {
       sUnit = "°F";
       iMaxSignificant = 19;
-      _fValue = _fValue*18.0f+320.0f;  // ... from celsius
+      _fValue = (_fValue-273.15f)*18.0f+320.0f;  // ... from kelvin
       if(_fValue > 1999.0f) {
         _fValue = 1999.0f;
       }
@@ -61,13 +61,16 @@ class PickerGenericTemperature extends Ui.Picker {
     else {
       sUnit = "°C";
       iMaxSignificant = 9;
-      _fValue = _fValue*10.0f;
+      _fValue = (_fValue-273.15f)*10.0f;  // ... from kelvin
       if(_fValue > 999.0f) {
         _fValue = 999.0f;
       }
       else if(_fValue < -999.0f) {
         _fValue = -999.0f;
       }
+    }
+    if(!_bAllowNegative and _fValue < 0.0f) {
+      _fValue = 0.0f;
     }
 
     // Split components
@@ -113,12 +116,12 @@ class PickerGenericTemperature extends Ui.Picker {
     var fValue = _amValues[1]*100.0f + _amValues[2]*10.0f + _amValues[3];
     fValue *= _amValues[0];
 
-    // Use user-specified temperature unit (NB: metric units are always used internally)
+    // Use user-specified temperature unit (NB: SI units are always used internally)
     if(_iUnit == Sys.UNIT_STATUTE) {
-      fValue = (fValue-320.0f)/18.0f;  // ... to celsius
+      fValue = (fValue-320.0f)/18.0f+273.15f;  // ... to kelvin
     }
     else {
-      fValue /= 10.0f;
+      fValue = fValue/10.0f+273.15f;  // ... to kelvin
     }
 
     // Return value
